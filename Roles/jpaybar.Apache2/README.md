@@ -1,0 +1,67 @@
+jpaybar.Apache2
+=========
+
+This role installs Apache2's latest version on `Ubuntu` (18.04, 20.04, 22.04), `Debian` (9, 10, 11) and `CentOS` (7.9, 8.5) distributions.
+
+Requirements
+------------
+
+No requirements needed. Just keep in mind that `Centos 7.9` requires `python 2` to run the playbook. I added `ansible_python_interpreter: "/usr/bin/python2"` variable to the inventory for it.
+
+Role Variables
+--------------
+
+There are 3 variable files (one for each distribution) inside `vars` folder, the `Debian` and `Ubuntu` ones are the same, there are changes in `Centos` since the path to the SSL certificate is different and the server installation and the corresponding modules have other names. There is an equal, empty copy inside `defaults` directory.
+
+Dependencies
+------------
+
+There are no dependencies.
+
+Run this Playbook
+----------------
+
+A quick start:
+
+```bash
+git clone https://github.com/jpaybar/Ansible-roles.git
+cd Ansible-roles/jpaybar.Apache2
+```
+
+Once you have cloned the repository, there are 3 directories inside, `Inventories`, `Playbooks` and `Roles`. You may run the Role this way:
+
+```bash
+ansible-playbook -i Inventories/apache_role_inventory.yml Playbooks/apache_role_playbook.yml 
+```
+
+or this way (user/passwd)
+
+```bash
+ansible-playbook -i Inventories/apache_role_inventory.yml Playbooks/apache_role_playbook.yml -u user -k
+```
+
+This is the playbook:
+
+```yaml
+---
+- hosts: all
+  become: true
+  roles:
+    - ../Roles/jpaybar.Apache2
+```
+
+But you can customize the playbook on your own way, as well as the inventory to your needs.
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+Juan Manuel Payán Barea    (IT Technician)    st4rt.fr0m.scr4tch@gmail.com
+
+https://github.com/jpaybar
+
+https://es.linkedin.com/in/juanmanuelpayan

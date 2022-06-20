@@ -1,0 +1,23 @@
+---
+# defaults file for jpaybar.Apache2
+
+vhost:
+  ip: 
+  #listen:
+    #- http: 80
+    #- https: 443
+  serverName:
+  documentRoot: 
+  certLocation: 
+  certKeyLocation: 
+
+install_packages:
+  #- apache2
+  
+apache_mods:
+  #- ssl
+  #- headers
+  #- rewrite
+  
+ansible_operator: 
+  
