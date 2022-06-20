@@ -1,2 +1,2 @@
 # Ansible-roles
-Collection of Ansible Roles for different distributions.
+Ansible Roles collection for different distributions.
