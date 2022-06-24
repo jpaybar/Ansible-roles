@@ -1,7 +1,7 @@
 jpaybar.Apache2
 =========
 
-This role installs Apache2's latest version on `Ubuntu` (18.04, 20.04, 22.04), `Debian` (9, 10, 11) and `CentOS` (7.9, 8.5) distributions. Set up an apache VirtualHost on port 80 (Debian and Ubuntu) and redirect it to an `https` connection to port 443. On `Centos` the connection is made https directly. To do this, a self-signed SSL certificate is created.
+This role installs Apache2's latest version on `Ubuntu` (18.04, 20.04, 22.04), `Debian` (9, 10, 11) and `CentOS` (7.9, 8.5) distributions. Set up an apache VirtualHost on port 80 (Debian and Ubuntu) and redirect it to an `https` connection to port 443. On `Centos` the connection is made https directly. To do this, a self-signed SSL certificate may be created running self-signed-ssl-cert.py python script placed on `files` folder.
 
 Requirements
 ------------
