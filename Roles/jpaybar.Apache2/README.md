@@ -1,7 +1,7 @@
 jpaybar.Apache2
 =========
 
-This role installs Apache2's latest version on `Ubuntu` (18.04, 20.04, 22.04), `Debian` (9, 10, 11) and `CentOS` (7.9, 8.5) distributions. Set up an apache VirtualHost on port 80 (Debian and Ubuntu) and redirect it to an `https` connection to port 443. On `Centos` the connection is made https directly. To do this, a self-signed SSL certificate may be created running self-signed-ssl-cert.py python script placed on `files` folder.
+This role installs Apache2's latest version on `Ubuntu` (18.04, 20.04, 22.04), `Debian` (9, 10, 11) and `CentOS` (7.9, 8.5) distributions. Set up an apache VirtualHost on port 80 (Debian and Ubuntu) and redirect it to an `https` connection to port 443. On `Centos` the connection is made https directly. To do this, a self-signed SSL certificate may be created running `self-signed-ssl-cert.py` python script placed on `files` folder.
 
 Requirements
 ------------
@@ -11,7 +11,7 @@ No requirements needed. Just keep in mind that `Centos 7.9` requires `python 2` 
 Role Variables
 --------------
 
-There are 3 variable files (one for each distribution) inside `vars` folder, the `Debian` and `Ubuntu` ones are the same, there are changes in `Centos` since the path to the SSL certificate is different and the server installation and the corresponding modules have other names. There is an equal, empty copy inside `defaults` directory.
+There are 3 variable files (one for each distribution) inside `vars` folder, the `Debian` and `Ubuntu` ones are the same, there are changes in `Centos` since the path to the SSL certificate is different and the server installation and the corresponding modules have other names. These variables are included on a file called `tasks/variables.yml` and this file is one of the tasks that `tasks/main.yml` runs. Variables for Virtualhost configuration (serverName, documentRoot, etc.) are found in `default/main.yml` file.
 
 Dependencies
 ------------
