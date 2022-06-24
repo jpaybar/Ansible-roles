@@ -1,13 +1,10 @@
 ---
 # vars file for jpaybar.Apache2
 
-vhost:
-  ip: "{{ ansible_host }}"
+apache:
   #listen:
     #- http: 80
     #- https: 443
-  serverName: "myapacheserver"
-  documentRoot: "/var/www/myapacheserver"
   certLocation: "/etc/ssl/certs/myapacheserver.crt"
   certKeyLocation: "/etc/ssl/private/myapacheserver.key"
 
@@ -18,6 +15,4 @@ apache_mods:
   - ssl
   - headers
   - rewrite
-  
-ansible_operator: "vagrant"
   
