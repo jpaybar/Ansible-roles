@@ -2,21 +2,11 @@
 # defaults file for jpaybar.Apache2
 
 vhost:
-  ip: 
+  ip: "{{ ansible_host }}"
   #listen:
     #- http: 80
     #- https: 443
-  serverName: 
-  documentRoot: 
-  certLocation: 
-  certKeyLocation: 
+  serverName: "myapacheserver"
+  documentRoot: "/var/www/myapacheserver"
 
-install_packages:
-  #- apache2
-  
-apache_mods:
-  #- ssl
-  #- headers
-  #- rewrite
-  
-ansible_operator: 
+ansible_operator: "vagrant"
