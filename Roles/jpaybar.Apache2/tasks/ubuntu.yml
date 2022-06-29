@@ -50,6 +50,12 @@
     path: "{{ vhost.documentRoot }}"
     state: directory
   tags: Website_folder
+  
+- name: Copy info.php file
+  copy:
+    src: "info.php"
+    dest: "{{ vhost.documentRoot }}"
+  tags: Copy_info.php
 
 - name: Apply templates
   template: src={{ item.src }} dest={{ item.dest }} #mode={{ item.mode }}
