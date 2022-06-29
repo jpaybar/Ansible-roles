@@ -24,6 +24,12 @@
     state: directory
   tags: Website_folder
   
+- name: Copy info.php file
+  copy:
+    src: "info.php"
+    dest: "{{ vhost.documentRoot }}"
+  tags: Copy_info.php
+  
 #======= The SSL parameters are included in the VirtualHost definition file and not in a separate file. ========#  
 - name: Apply templates
   template: src={{ item.src }} dest={{ item.dest }} #mode={{ item.mode }}
